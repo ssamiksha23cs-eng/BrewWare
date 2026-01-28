@@ -1,0 +1,289 @@
+/* 1. Reset and Center the Body */
+.login-page {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdf8f3; /* Light cafe cream color */
+    
+    /* These lines center the content vertically and horizontally */
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;     
+    height: 100vh !important;           /* Forces body to full screen height */
+}
+
+/* 2. Style the Card (The yellow circle part) */
+.login-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 380px; /* Adjust width as needed */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(80, 35, 20, 0.1);
+    border: 1px solid #eaddcf;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-text {
+    color: #502314; /* Deep coffee brown */
+    margin: 0;
+}
+
+.subtitle {
+    color: #8e736e;
+    margin-top: 5px;
+}
+
+/* 3. Form Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #502314;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* Prevents input from breaking width */
+}
+
+.pass-wrapper {
+    position: relative;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #502314;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #e16128; /* Coffee orange on hover */
+}
+
+/*view Menu page*/
+/* 1. GLOBAL STYLES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf8f3; /* Warm Cafe White */
+    margin: 0;
+    color: #4a2c2a;
+}
+
+/* 2. HEADER */
+.header {
+    background-color: #502314; /* Deep Coffee Brown */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 3. MAIN LAYOUT (The Sidebar + Content Area) */
+.main-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 4. LEFT SIDEBAR (Category List) */
+.category-sidebar {
+    flex: 0 0 350px !important; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-title {
+    font-size: 1.4rem;
+    color: #502314;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eaddcf;
+    padding-bottom: 5px;
+}
+
+/* 5. CATEGORY CARDS */
+.category-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateX(8px); /* Subtle slide to the right */
+    border-color: #c77856; /* Coffee Orange */
+    background-color: #fff9f5;
+}
+
+
+/* 1. This limits the size of the circle on the left bar */
+.cat-image-box {
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important; /* Prevents shrinking */
+    min-height: 70px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important; /* THIS CLIPS THE BIG IMAGE */
+    border: 3px solid #502314;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/* 2. This forces the big photo to shrink into the 60px circle */
+.cat-image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Crops the image into the circle */
+    display: block !important;
+}
+/* 7. CARD TEXT */
+.cat-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #502314;
+}
+
+.cat-info p {
+    margin: 2px 0 0;
+    color: #8e736e;
+    font-size: 0.85rem;
+}
+
+/* 8. RIGHT CONTENT AREA */
+.content-display {
+    flex: 1;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.welcome-box h2 {
+    font-size: 2rem;
+    color: #502314;
+}
+
+.welcome-box p {
+    color: #8e736e;
+    font-size: 1.1rem;
+}
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* 10. INDIVIDUAL FOOD CARD */
+.food-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #f0e6db;
+    transition: transform 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+/* THE CIRCLE FOR THE FOOD IMAGE */
+.food-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #127396; /* Highlight color */
+}
+
+.food-circle img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 11. ITEM TEXT & BUTTONS */
+.food-details h4 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #502314;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #e16128;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.add-btn {
+    background-color: #1294da;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #e16128;
+}
