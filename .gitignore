@@ -1,0 +1,10 @@
+# Ignore compiled Java files
+*.class
+
+# Ignore the target folder (Maven)
+target/
+
+# Ignore local server settings
+.settings/
+.project
+.classpath
