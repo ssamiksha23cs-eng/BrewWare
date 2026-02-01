@@ -1,4 +1,4 @@
-FROM tomcat:9.0-jdk11-openjdk
+FROM tomcat:9.0-jdk17-openjdk
 # Delete the default Railway/Tomcat files
 RUN rm -rf /usr/local/tomcat/webapps/*
 # Put YOUR project in the 'ROOT' spot
