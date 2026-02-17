@@ -150,7 +150,6 @@ function addToCart(itemName, price) {
     params.append('dealName', itemName);
     params.append('itemPrice', price);
 
-    // This ensures it hits /BrewWare/AddToCart instead of just /AddToCart
     fetch('AddToCart', { 
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -163,7 +162,7 @@ function addToCart(itemName, price) {
         return response.text();
     })
     .then(data => {
-        alert(data); // This should now say "Success! ... added at ₹XXX"
+        alert(data); 
         window.location.href = "cart.jsp";
     });
 }
