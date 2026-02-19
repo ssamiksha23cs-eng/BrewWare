@@ -157,7 +157,7 @@ INSERT INTO `orders` (`order_id`, `item_name`, `price`, `session_id`, `ordered_a
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `age` int(11) NOT NULL,
