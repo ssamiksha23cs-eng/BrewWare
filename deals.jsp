@@ -16,19 +16,19 @@
         
         <div class="vertical-scroll-container">
             
-            <div class="image-box deal-card" onclick="addToCart('Cheesy Melt Burger Meal')">
-                <img src="images/banner1.jpg" alt="Cheesy Melt">
+           <div class="image-box deal-card" onclick="addToCart('2 Cheesy Chicken burger')">
+                <img src="image/burger1.jpg" alt="Burger Deal">
                 <div class="label">
-                    <span class="discount-tag">FLAT 50% OFF</span>
-                    <br>Cheesy Melt Burger Combo
+                    <span class="discount-tag">ONLY ₹439</span>
+                    <br>2 Cheesy Chicken burger
                 </div>
             </div>
 
-            <div class="image-box deal-card" onclick="addToCart('Golden Deals Pizza')">
-                <img src="images/banner2.jpg" alt="Golden Deals">
+             <div class="image-box deal-card" onclick="addToCart('Veggie Burger + Large Fries')">
+                <img src="image/veg burger.jpg" alt="Burger Deal">
                 <div class="label">
-                    <span class="discount-tag">BUY 1 GET 1</span>
-                    <br>Golden Crust Pizza Special
+                    <span class="discount-tag">ONLY ₹189</span>
+                    <br>Veggie Burger + Large Friesk
                 </div>
             </div>
 
