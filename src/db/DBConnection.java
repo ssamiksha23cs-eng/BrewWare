@@ -6,33 +6,33 @@ import java.sql.DriverManager;
 public class DBConnection {
 
     public static Connection getConnection() throws Exception {
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
-        try {
-            // Load MySQL Driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+        String host = System.getenv("DB_HOST");
+        String dbPort = System.getenv("DB_PORT");
+        String user = System.getenv("DB_USER");
+        String pass = System.getenv("DB_PASS");
+        String dbName = System.getenv("DB_NAME");
 
-            // Fetch Environment Variables (Render)
-            String host = System.getenv("DB_HOST");
-            String dbPort = System.getenv("DB_PORT");
-            String user = System.getenv("DB_USER");
-            String pass = System.getenv("DB_PASS");
-            String dbName = System.getenv("DB_NAME");
+        String url;
 
-            // Safety check
-            if (host == null || dbPort == null || user == null || pass == null || dbName == null) {
-                throw new Exception("One or more environment variables are missing.");
-            }
-
-            // Cloud Connection URL (SSL Required for Aiven)
-            String url = "jdbc:mysql://" + host + ":" + dbPort + "/" + dbName +
-                    "?sslMode=REQUIRED&allowPublicKeyRetrieval=true";
-
-            return DriverManager.getConnection(url, user, pass);
-
-        } catch (Exception e) {
-            System.err.println("DATABASE CONNECTION ERROR");
-            e.printStackTrace();
-            throw new Exception("Connection Failed: " + e.getMessage());
+        // If host is null, we are likely running on your local computer
+        if (host == null) {
+            url = "jdbc:mysql://localhost:3306/brew_ware?useSSL=false";
+            user = "root";
+            pass = ""; // Your local password
+        } else {
+            // Render/Aiven Connection with mandatory SSL parameters
+            url = "jdbc:mysql://" + host + ":" + dbPort + "/" + dbName + 
+                  "?useSSL=true&requireSSL=true&verifyServerCertificate=false&allowPublicKeyRetrieval=true";
         }
+
+        return DriverManager.getConnection(url, user, pass);
+
+    } catch (Exception e) {
+        e.printStackTrace(); // This prints the EXACT error in Render Logs
+        throw new Exception("Database Connection Failed: " + e.getMessage());
     }
+}
 }
